@@ -32,7 +32,7 @@ public class Trade {
         this.tradeAmount = tradeAmount;
         this.tradeType = tradeType;
     }
-        // Getter for trade origin
+    // Getter for trade origin
     public  String getTradeOrigin(){
         return tradeOrigin;
     }       
@@ -63,4 +63,28 @@ public class Trade {
         }
         return tradeInfo;
     }
+    
+    //Set trade destination
+    public void setTradeDestination(String tradeDestination) {
+        if(tradeDestination.matches("[A-Z]{3}")){
+            this.tradeDestination = tradeDestination;
+        }else
+            System.out.println("Error: Trade destination format not acceptable.");
+    }    
+    // Set trade price
+    public void setTradePrice(double tradePrice) {
+        this.tradePrice = tradePrice;
+    }
+    // Set trade amount
+    public void setTradeAmount(int tradeAmount) {
+        this.tradeAmount = tradeAmount;
+    }
+    // Set trade type
+    public void setTradeType(String tradeType) {
+        if(!tradeType.matches("[RO]")){
+            System.out.println("Error: Trade type format not acceptable.");
+        } else {
+            this.tradeType = tradeType;
+        }
+    }     
 }
