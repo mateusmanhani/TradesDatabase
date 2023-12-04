@@ -1,20 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package tradesdatabase;
 
 /**
  *
- * @author Mateus
+ * @author Mateus Manhani
  */
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 public class TradesDatabase {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+        String inputFile = "trades.txt";
+        String outputFile = "trades.csv";
+        // Using Try-with-resources statement to automatically close resources (reader and writer)
+        try (FileReader reader = new FileReader(inputFile);
+             BufferedReader br = new BufferedReader(reader);
+             FileWriter writer = new FileWriter(outputFile)) {
+    } catch (IOException e) {
+            System.out.println("Error: Unable to open file.");
+        }
     
 }
